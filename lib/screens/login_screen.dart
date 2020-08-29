@@ -24,23 +24,21 @@ class _LoginScreenState extends State<LoginScreen> {
     var height=MediaQuery.of(context).size.height;
     var width=MediaQuery.of(context).size.width;
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
+      body: Container(
           height: height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: <Color>[
-                  Colors.lightBlueAccent,
-                  Colors.deepPurple,
-                  Colors.pink[600],
+                  Colors.black54,
+                  Colors.white54,
+                  Colors.black54,
                 ]
             ),
           ),
           child: LoginForm(),
         ),
-      ),
     );
   }
 }

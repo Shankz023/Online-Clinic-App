@@ -44,7 +44,7 @@ class _BoolinfPreviewScreenState extends State<BoolinfPreviewScreen> with Single
    // print(home_book);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bookings'),
+        title: Text('Bookings',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamMedium'),),
         bottom: new TabBar(
             controller: controller,
             labelColor: Colors.redAccent,
@@ -68,11 +68,11 @@ class _BoolinfPreviewScreenState extends State<BoolinfPreviewScreen> with Single
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: <Color>[
-                  Colors.lightBlueAccent,
-                  Colors.deepPurple,
-                  Colors.pink[600],
+                  Colors.black54,
+                  Colors.white54,
+                  Colors.black54,
                 ]
-            )
+            ),
             ),
             child: Center(
               child: CircularProgressIndicator(),
@@ -82,25 +82,25 @@ class _BoolinfPreviewScreenState extends State<BoolinfPreviewScreen> with Single
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: <Color>[
-                    Colors.lightBlueAccent,
-                    Colors.deepPurple,
-                    Colors.pink[600],
+                    Colors.black54,
+                    Colors.white54,
+                    Colors.black54,
                   ]
-              )
+              ),
               ),
               child: Center(
-                child: Text('No Data Present'),
+                child: Text('No Data Present',style: TextStyle(fontFamily: 'GothamMedium'),),
               )):OldBookings(),
           loadBooktoday==true?Container(
             decoration: BoxDecoration(gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: <Color>[
-                  Colors.lightBlueAccent,
-                  Colors.deepPurple,
-                  Colors.pink[600],
+                  Colors.black54,
+                  Colors.white54,
+                  Colors.black54,
                 ]
-            )
+            ),
             ),
             child: Center(
               child: CircularProgressIndicator(),
@@ -110,25 +110,25 @@ class _BoolinfPreviewScreenState extends State<BoolinfPreviewScreen> with Single
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: <Color>[
-                    Colors.lightBlueAccent,
-                    Colors.deepPurple,
-                    Colors.pink[600],
+                    Colors.black54,
+                    Colors.white54,
+                    Colors.black54,
                   ]
-              )
+              ),
               ),
               child: Center(
-                child: Text('No Data Present'),
+                child: Text('No Data Present',style: TextStyle(fontFamily: 'GothamMedium'),),
               )):TodaysBooking(),
           loadBookfuture==true?Container(
             decoration: BoxDecoration(gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: <Color>[
-                  Colors.lightBlueAccent,
-                  Colors.deepPurple,
-                  Colors.pink[600],
+                  Colors.black54,
+                  Colors.white54,
+                  Colors.black54,
                 ]
-            )
+            ),
             ),
             child: Center(
               child: CircularProgressIndicator(),
@@ -138,14 +138,14 @@ class _BoolinfPreviewScreenState extends State<BoolinfPreviewScreen> with Single
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: <Color>[
-                    Colors.lightBlueAccent,
-                    Colors.deepPurple,
-                    Colors.pink[600],
+                    Colors.black54,
+                    Colors.white54,
+                    Colors.black54,
                   ]
-              )
+              ),
               ),
               child: Center(
-                child: Text('No Data Present'),
+                child: Text('No Data Present',style: TextStyle(fontFamily: 'GothamMedium'),),
               )):UpcomingBookings(),
         ],
       ),

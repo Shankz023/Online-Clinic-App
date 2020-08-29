@@ -41,8 +41,8 @@ class _HelperBotScreenState extends State<HelperBotScreen> {
         children: [
 
           data == 0 ? Container(
-            height: 60,
-            width: 60,
+            height: 30,
+            width: 30,
             child: Icon(FontAwesomeIcons.robot,color: Colors.redAccent,)
           ) : Container(),
 
@@ -68,7 +68,7 @@ class _HelperBotScreenState extends State<HelperBotScreen> {
                             child: Text(
                               msg,
                               style: TextStyle(
-                                  color: Colors.white, fontWeight: FontWeight.bold),
+                                  color: Colors.white, fontWeight: FontWeight.bold,fontFamily: 'GothamMedium'),
                             ),
                           ))
                     ],
@@ -78,8 +78,8 @@ class _HelperBotScreenState extends State<HelperBotScreen> {
 
 
           data == 1? Container(
-            height: 60,
-            width: 60,
+            height: 40,
+            width: 40,
             child: Icon(Icons.account_circle,color: Colors.redAccent,)
           ) : Container(),
 
@@ -94,7 +94,7 @@ class _HelperBotScreenState extends State<HelperBotScreen> {
     width=MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Helper Bot'),
+        title: Text('Helper Bot',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamMedium'),),
       ),
       body: Container(
         height: height,
@@ -123,7 +123,7 @@ class _HelperBotScreenState extends State<HelperBotScreen> {
                 title: Container(
                   padding: EdgeInsets.all(5),
                   margin: EdgeInsets.only(left: 3),
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.blue),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.blue),
                   child: TextFormField(
                     cursorColor: Colors.redAccent,
                     controller: messageInsert,

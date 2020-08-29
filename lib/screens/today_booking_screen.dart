@@ -118,11 +118,11 @@ class _TodaysBookingState extends State<TodaysBooking> {
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: <Color>[
-                  Colors.lightBlueAccent,
-                  Colors.deepPurple,
-                  Colors.pink[600],
+                  Colors.black54,
+                  Colors.white54,
+                  Colors.black54,
                 ]
-            )
+            ),
         ),
         width: width,
         height: height,

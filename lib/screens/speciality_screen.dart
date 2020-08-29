@@ -47,9 +47,9 @@ class _SpecialityScreenState extends State<SpecialityScreen> {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: <Color>[
-                Colors.lightBlueAccent,
-                Colors.deepPurple,
-                Colors.pink[600],
+                Colors.black54,
+                Colors.white38,
+                Colors.black54,
               ]
           ),
         ),
@@ -66,13 +66,14 @@ class _SpecialityScreenState extends State<SpecialityScreen> {
                         height: height*.45,
                         width: width,
                         decoration: BoxDecoration(gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight ,
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight ,
                             colors: <Color>[
-                              Color(0xFF00C853),
-                              Color(0xFFFFD740),
+                              Colors.teal[400],
+                              Colors.tealAccent,
                             ]
-                        ),),
+                        ),
+                        ),
                         child: Stack(
                           children: <Widget>[
                             Hero(
@@ -109,7 +110,7 @@ class _SpecialityScreenState extends State<SpecialityScreen> {
                     child: FloatingActionButton(
                       backgroundColor: Colors.redAccent[200],
                       onPressed: (){
-                        print('Tap');
+                        Navigator.of(context).pushNamed('/helper_bot_screen');
                       },
                       child: Icon(FontAwesomeIcons.question),
                       elevation: 10,

@@ -24,12 +24,12 @@ class _OldBookingsState extends State<OldBookings> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Patient\'s Name: '+oldbookingList[index]['patient_name'].toString().toUpperCase(),style: TextStyle(color: Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,),),
-                    Text('Patient\'s Age: '+oldbookingList[index]['age'],style: TextStyle(color:  Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,),),
-                    Text('Booking Date: '+oldbookingList[index]['booking_date'],style: TextStyle(color: Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,),),
-                    Text('Patient\'s Contact: '+oldbookingList[index]['contact'],style: TextStyle(color:  Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,),),
-                    Text('Patient\'s Sex: '+oldbookingList[index]['sex'],style: TextStyle(color:  Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,),),
-                    Text('Appointed Doctor: '+oldbookingList[index]['doctor_name'],style: TextStyle(color:  Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,),),
+                    Text('Patient\'s Name: '+oldbookingList[index]['patient_name'].toString().toUpperCase(),style: TextStyle(color: Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,fontFamily: 'GothamMedium'),),
+                    Text('Patient\'s Age: '+oldbookingList[index]['age'],style: TextStyle(color:  Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,fontFamily: 'GothamMedium'),),
+                    Text('Booking Date: '+oldbookingList[index]['booking_date'],style: TextStyle(color: Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,fontFamily: 'GothamMedium'),),
+                    Text('Patient\'s Contact: '+oldbookingList[index]['contact'],style: TextStyle(color:  Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,fontFamily: 'GothamMedium'),),
+                    Text('Patient\'s Sex: '+oldbookingList[index]['sex'],style: TextStyle(color:  Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,fontFamily: 'GothamMedium'),),
+                    Text('Appointed Doctor: '+oldbookingList[index]['doctor_name'],style: TextStyle(color:  Colors.indigo,fontWeight: FontWeight.w400,letterSpacing: 1.0,fontFamily: 'GothamMedium'),),
                   ],
                 ),
 
@@ -52,11 +52,11 @@ class _OldBookingsState extends State<OldBookings> {
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: <Color>[
-                  Colors.lightBlueAccent,
-                  Colors.deepPurple,
-                  Colors.pink[600],
+                  Colors.black54,
+                  Colors.white54,
+                  Colors.black54,
                 ]
-            )
+            ),
         ),
         width: width,
         height: height,

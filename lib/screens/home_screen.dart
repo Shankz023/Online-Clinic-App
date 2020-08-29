@@ -56,30 +56,30 @@ class _HomeScreenState extends State<HomeScreen> {
             begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: <Color>[
-                Colors.lightBlueAccent,
-                Colors.deepPurple,
-                Colors.pink[600],
+                Colors.blueGrey,
+                Colors.grey[850],
+                Colors.blueGrey,
               ]
           )
           ),
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
-                expandedHeight: 340,
+                expandedHeight: 300,
                 pinned: true,
                 elevation: 20,
                 flexibleSpace: FlexibleSpaceBar(
                   centerTitle: true,
-                  title: Text('Kuseshwar\'s PolyClinic',style: TextStyle(fontSize: 16,letterSpacing: 1),textAlign: TextAlign.left,),
+                  title: Text('Kuseshwar\'s PolyClinic',style: TextStyle(fontSize: 20,letterSpacing: 1,fontFamily: 'GothamBold'),textAlign: TextAlign.left,),
                   background: Container(
-                    decoration: BoxDecoration(color: Colors.black54),
+                    decoration: BoxDecoration(color: Colors.blueGrey[700]),
                     height: 100,
                     child: Column(
                       children: <Widget>[
                         SizedBox(height: height*.045,),
                         Image(
                           image: AssetImage('assets/images/Logo.png'),
-                          height: 300,
+                          height: 240,
                           fit: BoxFit.fitHeight,
                         ),
                       ],
@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               margin: EdgeInsets.only(left: width*.05),
                               width: width*.34,
                               alignment: Alignment.topLeft,
-                              child: Text('SPECIALITY',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.indigoAccent),textAlign: TextAlign.start,),
+                              child: Text('SPECIALITY',style: TextStyle(fontSize: 22,fontFamily: 'GothamLight',fontWeight: FontWeight.bold,color: Colors.white70),textAlign: TextAlign.start,),
                             ),
                             GestureDetector(
                               onTap: (){
@@ -109,12 +109,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                               child: Container(
                                 margin: EdgeInsets.only(left: ((width*.8)-(width*.05)-(width*.34))),
-                                child: Text('SEE ALL',style: TextStyle(fontSize: 17,fontWeight: FontWeight.w800,color: Colors.red[600])),
+                                child: Text('SEE ALL',style: TextStyle(fontSize: 17,fontFamily: 'GothamMedium',fontWeight: FontWeight.w900,color: Colors.red[600])),
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(height: height*.06,),
                         SpecialityCaarousel(),
                       ],
                     ),

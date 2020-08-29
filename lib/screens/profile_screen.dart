@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 20,
-        title: Text('Settings'),
+        title: Text('Settings',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamMedium'),),
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -33,11 +33,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: <Color>[
-              Colors.lightBlueAccent,
-              Colors.deepPurple,
-              Colors.pink[600],
+              Colors.grey[850],
+              Colors.grey[600],
+              Colors.grey[850],
             ]
-        )
+        ),
         ),
         child: ProfileWidget(userName,userImage,userEmail,userNumber),
       ),

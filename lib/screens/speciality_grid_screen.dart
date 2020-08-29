@@ -14,17 +14,17 @@ class SpecialityGrid extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
-              height: MediaQuery.of(context).size.height*.16,
+              height: MediaQuery.of(context).size.height*.20,
               width: 200,
               margin: EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight ,
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight ,
                     colors: <Color>[
-                      Color(0xFF00C853),
-                      Color(0xFFFFD740),
+                      Colors.teal[400],
+                      Colors.tealAccent,
                     ]
                 ),
               ),
@@ -39,15 +39,9 @@ class SpecialityGrid extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
+            SizedBox(height: 10,),
             Container(
-              child: ShaderMask(shaderCallback: (bounds)=>LinearGradient(
-                begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                colors: <Color>[
-               Colors.lightBlue,
-                 Colors.lightBlueAccent
-                ]).createShader(bounds),
-                 child: Text(_speciality.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white),),),
+                 child: Text(_speciality.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamLight'),),
             ),
           ],
         ),
@@ -58,18 +52,19 @@ class SpecialityGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Speciality'),
+        title: Text('Speciality',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamMedium'),),
       ),
       body: Container(
         decoration: BoxDecoration(gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: <Color>[
-              Colors.lightBlueAccent,
-              Colors.deepPurple,
-              Colors.pink[600],
+              Colors.black54,
+              Colors.white38,
+              Colors.black54,
             ]
-        )),
+        ),
+        ),
         child: GridView.builder(gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: MediaQuery.of(context).size.height*.4,
           crossAxisSpacing: 15,

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.deepPurpleAccent[200],
+        primaryColor: Colors.grey[600],
         accentColor: Color(0xFFD8ECF1),
         scaffoldBackgroundColor: Colors.white54,
       ),
@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
         //'/speciality_screen':(ctx)=>SpecialityScreen(),
         '/profile_screen':(ctx)=>ProfileScreen(),
         '/helper_bot_screen':(ctx)=>HelperBotScreen(),
-
       },
     );
   }

@@ -42,23 +42,24 @@ class _DrawerListState extends State<DrawerList> {
   Widget build(BuildContext context) {
     home_book=home;
     return Container(
-      decoration: BoxDecoration(color: Colors.blueAccent),
+      decoration: BoxDecoration(color: Colors.grey[800]),
       child: ListView(
         children: <Widget>[
           ListTile(
             title: CircleAvatar(
+              backgroundColor: Colors.redAccent,
               radius: 75,
               child: Container(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(80),
-                  child: Image(height: 150,width: 150,image: ((_user != null)?NetworkImage(_user.photoUrl):NetworkImage(ImageUrl)),fit: BoxFit.contain,),
+                  child: Image(height: 145,width: 145,image: ((_user != null)?NetworkImage(_user.photoUrl):NetworkImage(ImageUrl)),fit: BoxFit.contain,),
                 ),
               ),
             ),
           ),
           SizedBox( height: MediaQuery.of(context).size.height*.03,),
           ListTile(
-            leading: Text('Home',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),),
+            leading: Text('Home',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700,color: Colors.white70,fontFamily: 'GothamLight'),),
             onTap: (){
               if(widget.s.toString().compareTo('home')==0){
                 Navigator.of(context).pop();
@@ -68,11 +69,11 @@ class _DrawerListState extends State<DrawerList> {
               }
 
             },
-            trailing: Icon(Icons.home),
+            trailing: Icon(Icons.home,),
           ),
-          Divider(height: MediaQuery.of(context).size.height*.03,thickness: 2,),
+          Divider(height: MediaQuery.of(context).size.height*.03,thickness: 2,color: Colors.grey[500],),
           ListTile(
-            leading: Text('Bookings',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),),
+            leading: Text('Bookings',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700,color: Colors.white70,fontFamily: 'GothamLight'),),
             onTap: (){
               Navigator.of(context).pop();
               if(widget.s.toString().compareTo('home')==0){
@@ -81,20 +82,21 @@ class _DrawerListState extends State<DrawerList> {
             },
             trailing: Icon(FontAwesomeIcons.bookMedical),
           ),
-          Divider(height: MediaQuery.of(context).size.height*.03,thickness: 2,),
+          Divider(height: MediaQuery.of(context).size.height*.03,thickness: 2,color: Colors.grey[500],),
           ListTile(
-            leading: Text('Helper Bot',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),),
+            leading: Text('Helper Bot',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700,color: Colors.white70,fontFamily: 'GothamLight'),),
             onTap: (){
+              Navigator.of(context).pop();
               Navigator.of(context).pushNamed('/helper_bot_screen');
             },
             trailing: Icon(FontAwesomeIcons.robot),
           ),
-          Divider(thickness: 2,),
+          Divider(thickness: 2,color: Colors.grey[500],),
           if(_isloading)
             CircularProgressIndicator()
           else
             ListTile(
-              leading: Text('Settings',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),),
+              leading: Text('Settings',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700,color: Colors.white70,fontFamily: 'GothamLight'),),
               onTap: (){
                 if(Email!=null){
                     DBRef.child('${Email.substring(0,lst)}').once().then((DataSnapshot datasnapShot) {
@@ -112,9 +114,9 @@ class _DrawerListState extends State<DrawerList> {
               },
               trailing: Icon(Icons.settings),
             ),
-            Divider(thickness: 2,),
+            Divider(thickness: 2,color: Colors.grey[500],),
             ListTile(
-              leading: Text('Log Out',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),),
+              leading: Text('Log Out',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700,color: Colors.white70,fontFamily: 'GothamLight'),),
               onTap: (){
                 if(actualMode==Mode.google){
                   authGoogle.googleSignOut();
@@ -127,7 +129,7 @@ class _DrawerListState extends State<DrawerList> {
               },
               trailing: Icon(Icons.exit_to_app),
             ),
-            Divider(thickness: 2,),
+            Divider(thickness: 2,color: Colors.grey[500],),
 
         ],
       ),

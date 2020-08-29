@@ -68,7 +68,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
       height: visibility!=0?height*.5:height*.2,
       margin: EdgeInsets.only(top: height*.01,bottom: height*.01,left: width*.01,right: width*.01),
       padding: EdgeInsets.only(top: height*.01,bottom: height*.01,left: width*.02,right: width*.02),
-      color: Colors.blue,
+      color: Colors.grey[800],
       child: Form(
         key: _formKey,
         child: Column(
@@ -148,17 +148,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       SizedBox(height: height*.03,),
-                      Text('Name: '+widget.userName,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white54)),
+                      Text('Name: '+widget.userName,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamMedium')),
                       SizedBox(height: height*.01,),
-                      Text(widget.userEmail,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white54),),
+                      Text(widget.userEmail,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamMedium'),),
                       SizedBox(height: height*.01,),
                       GestureDetector(
                         child: Row(
                           children: <Widget>[
-                            number!=null?Text('+91'+number,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white54),)
-                                :mobile_number!=null?Text( mobile_number,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white54),)
-                                :mobile!=null?Text(mobile,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color:Colors.white54),)
-                                :Text('',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white54),),
+                            number!=null?Text('+91'+number,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamMedium'),)
+                                :mobile_number!=null?Text( mobile_number,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,fontFamily: 'GothamMedium',color: Colors.white),)
+                                :mobile!=null?Text(mobile,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color:Colors.white,fontFamily: 'GothamMedium'),)
+                                :Text('',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: 'GothamMedium'),),
                             SizedBox(width: width*.1,),
                             Icon(Icons.edit,size: 18,color: Colors.redAccent,),
                           ],
@@ -189,12 +189,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             ],
           ),
         ),
-        Divider(thickness: 2,),
+        Divider(thickness: 2,color: Colors.grey[800],),
         Container(
           margin: EdgeInsets.only(left: width*.02,top: height*.01),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-            Text('About',style: TextStyle(fontSize: 20,color: Colors.white70,fontWeight: FontWeight.w600),),
+            Text('About',style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600,fontFamily: 'GothamMedium'),),
             SizedBox(height: height*.01,),
             GestureDetector(
               onTap: (){
@@ -203,12 +203,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   Icon(FontAwesomeIcons.github),
                   SizedBox(height: height*.006,),
                   SelectableText(
-                    'https://github.com/Shankz023/lecture0',style: TextStyle(fontSize: 14),cursorColor: Colors.redAccent,
+                    'https://github.com/Shankz023/Online-Clinic-App',style: TextStyle(fontSize: 14,fontFamily: 'GothamMedium'),cursorColor: Colors.redAccent,
                   ),
                 ]
                 );
               },
-              child: Text('Version 1.0.0',style: TextStyle(fontSize: 14,color: Colors.white54,fontWeight: FontWeight.w400),),
+              child: Text('Version 1.0.0',style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w400,fontFamily: 'GothamMedium'),),
             ),
               SizedBox(height: height*.01,),
             GestureDetector(
@@ -216,10 +216,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 showDialog(
                   context: context,builder: (_)=>NetworkGiffyDialog(
                     image: Image.network('https://media0.giphy.com/media/3o7TKGAJ7CLp95cNI4/giphy.gif'),
-                    title: Text('Developer\'s Info',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700),),
+                    title: Text('Developer\'s Info',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700,fontFamily: 'GothamMedium'),),
                   description: Text('Hola, It\'s me, Shankar Kumar Shaw, developer of this app.'
                       'Hope, You liked my work this is my full fleged work using Flutter'
-                      ', It\'s an open source app you can get the code from my git-hub account, to get link click on Version.',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w400)),
+                      ', It\'s an open source app you can get the code from my git-hub account, to get link click on Version.',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w400,fontFamily: 'GothamLight')),
                   entryAnimation: EntryAnimation.TOP,
                   buttonOkColor: Colors.redAccent,
                   onlyOkButton: true,
@@ -230,7 +230,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 );
               },
               child: Text('About Me',style: TextStyle(
-                  fontSize: 14,color: Colors.white54,fontWeight: FontWeight.w400),),
+                  fontSize: 14,color: Colors.white,fontWeight: FontWeight.w400,fontFamily: 'GothamMedium'),),
             ),
           ],)
         ),

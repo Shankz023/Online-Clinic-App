@@ -30,15 +30,16 @@ class _DoctorsTileState extends State<DoctorsTile> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white24
+        color: Colors.grey[700]
       ),
       child: ExpansionTile(
-        title: Text('${doctorsModel2.name}',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,letterSpacing: 1.2),),
+        backgroundColor: Colors.black38,
+        title: Text('${doctorsModel2.name}',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,letterSpacing: 1.2,fontFamily: 'GothamLight'),),
         onExpansionChanged: (value){
         },
         children: <Widget>[
           Text(
-            'Consultation charge is ${doctorsModel2.fees}',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 14,letterSpacing: 1.0),
+            'Consultation charge is ${doctorsModel2.fees}',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 14,letterSpacing: 1.0,fontFamily: 'GothamMedium'),
           ),
           SizedBox(height: 10,),
         ],

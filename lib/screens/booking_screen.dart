@@ -33,11 +33,11 @@ class _BookingState extends State<Booking> {
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     colors: <Color>[
-                      Colors.lightBlueAccent,
-                      Colors.deepPurple,
-                      Colors.pink[600],
+                      Colors.black54,
+                      Colors.white38,
+                      Colors.black54,
                     ]
-                )
+                ),
             ),
             child: Column(
               children: <Widget>[

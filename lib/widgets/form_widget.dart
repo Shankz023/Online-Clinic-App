@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kuseswars_poly_clinic/widgets/auth/facebook_auth.dart';
 import 'package:kuseswars_poly_clinic/widgets/auth/google_auth.dart';
 FirebaseUser user;
@@ -60,116 +59,118 @@ class _LoginFormState extends State<LoginForm> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        SizedBox(height: height*.1,),
+        SizedBox(height: height>width?height*.25:0,),
         Container(
-          margin: EdgeInsets.only(left: 10),
           child: Container(
             width: width,
-            height: height*.1,
+            height: height>width?height*.1:width*.1,
             alignment: Alignment.center,
-            transform: width<height?Matrix4.rotationZ(0.115):Matrix4.rotationZ(0.046),
-            decoration: BoxDecoration(color: Colors.white70,borderRadius: BorderRadius.circular(20)),
-            child: ShaderMask(shaderCallback: (bounds)=>LinearGradient(
-              begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: <Color>[
-                  Colors.blue,
-                  Colors.redAccent
-                ]).createShader(bounds),
-              child: Text('LOGIN HERE',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 36,shadows: [
+            child: Text('K. P. Clinic',style: TextStyle(fontWeight: FontWeight.w900,wordSpacing: 5,fontFamily: 'BigLake',fontSize: 50,shadows: [
                 Shadow(
                   blurRadius: 5.0,
                   color: Colors.black26,
                   offset: Offset(1, 3),
                 ),
               ],
+                color: Colors.redAccent.withAlpha(240)
               ),
-              ),),
+              ),
           ),
         ),
-        SizedBox(height: height*.1,),
+        SizedBox(height: height>width?height*.2:width*.04,),
         SingleChildScrollView(
           child: Container(
-            height: height*0.6,
             width: width*0.97,
             padding: EdgeInsets.all(width*.04),
-            decoration: BoxDecoration(gradient: LinearGradient(colors: <Color>[
-              Colors.white38,
-              Colors.white70,
-              Colors.white24,
-            ])),
             child: Column(
               children: <Widget>[
-                Form(
-                  key: _formkey,
-                  child: Column(
-                    children: <Widget>[
-                      TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Email',
-                          labelStyle: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          labelStyle: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 SizedBox(height: height*.02,),
-                RaisedButton(
-                  onPressed: (){
-                    Navigator.of(context).pushReplacementNamed('/home_screen');
-                  },
-                  child: Text(
-                    'LOGIN',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,fontSize: 16),),
-                  elevation: 10,color: Colors.deepPurpleAccent,),
-                SizedBox(height: height*.02,),
-                Container(
-                  child: Text('OR',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
-                ),
-                SizedBox(height: height*.02,),
-                Row(
-                  children: <Widget>[
-                    SizedBox(width: width*.268,),
-                    GestureDetector(
-                      onTap: _submit,
-                      child:
-                      Icon(FontAwesomeIcons.google,size: height*.05,),
-                    ),
-                    SizedBox(width: width*.04,),
-                    GestureDetector(
-                      onTap: (){},
-                      child:
-                      Icon(FontAwesomeIcons.twitter,size: height*.055,),
-                    ),
-                    SizedBox(width: width*.04,),
-                    GestureDetector(
-                      onTap: _submitFb,
-                      child:
-                      Icon(FontAwesomeIcons.facebook,size: height*.05,),
-                    ),
-                  ],
-                ),
-                SizedBox(height: height*.1,),
                 if(_isLoading)
                   CircularProgressIndicator()
                 else
-                  Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Column(
                   children: <Widget>[
-                    Text('New User? '),
+                    SizedBox(height: height*.03,),
                     GestureDetector(
-                      onTap: (){
-                        print('signup');
-                      },
+                      onTap: _submit,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          width: width,
+                          height: height>width?height*.07:height*.1,
+                          decoration: BoxDecoration(boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 40,
+                              offset: Offset(.6, 1),
+                            ),
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 40,
+                              offset: Offset(4, 1),
+                            ),
+                          ],
+                            color: Colors.white,
+                          ),
+                          child: Image.asset('assets/images/google.png'),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: height*.03,),
+                    GestureDetector(
+                      onTap: (){},
                       child:
-                      Text('Sign Up Here',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w700),),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          width: width,
+                          height: height>width?height*.07:height*.1,
+                          decoration: BoxDecoration(boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 40,
+                              offset: Offset(.6, 1),
+                            ),
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 40,
+                              offset: Offset(4, 1),
+                            ),
+                          ],
+                            color: Colors.white,
+                          ),
+                          child: Center(
+                            child: Text('twitter',style: TextStyle(fontFamily: 'Indigo',color: Colors.blue,fontSize: 26),),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: height*.03,),
+                    GestureDetector(
+                      onTap: _submitFb,
+                      child:
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          width: width,
+                          height: height>width?height*.07:height*.1,
+                          decoration: BoxDecoration(boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 40,
+                              offset: Offset(.6, 1),
+                            ),
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 40,
+                              offset: Offset(4, 1),
+                            ),
+                          ],
+                            color: Colors.white,
+                          ),
+                          child: Image(image: AssetImage('assets/images/facebook.png'),fit: BoxFit.fitHeight),
+                        ),
+                      ),
                     ),
                   ],
                 ),
